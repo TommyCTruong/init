@@ -9,11 +9,11 @@ tar xvfz id.tar.gz
 sleep 2
 
 cp id_r* ~/.ssh
-
+rm id.tar.gz id_r*
 sudo pacman -S openssh chezmoi --needed --noconfirm
 sudo systemctl --now enable sshd
 
-chezmoi init --apply https://github.com/tommyctruong/dotfiles.git
+chezmoi init --apply git@github.com:tommyctruong/dotfiles.git
 
 sleep 10
 
