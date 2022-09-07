@@ -18,3 +18,4 @@ chezmoi init --apply git@github.com:tommyctruong/dotfiles.git
 sleep 10
 
 ~/.zsh/scripts/install_pacman.sh
+###
