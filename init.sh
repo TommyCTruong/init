@@ -14,6 +14,17 @@ cp id_r* authorized_keys ~/.ssh
 rm id_r* authorized_keys
 
 ccrypt -e keys.tar.gz
+
+git save
+
+git done
+
+curl -sL https://raw.githubusercontent.com/wimpysworld/deb-get/main/deb-get | sudo -E bash -s install deb-get
+deb-get install bat
+
+curl -sS https://starship.rs/install.sh | sh
+
+# curl -LO https://github.com/wez/wezterm/releases/download/nightly/wezterm-nightly.Ubuntu22.04.deb && sudo apt install -y ./wezterm-nightly.Ubuntu22.04.deb
 #rm id.tar.gz id_r*
 #sudo pacman -S openssh chezmoi --needed --noconfirm
 #sudo systemctl --now enable sshd
