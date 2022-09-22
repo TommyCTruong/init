@@ -19,14 +19,26 @@ git save
 
 git done
 
+sudo apt install curl
+
+sh -c "$(curl -fsLS https://chezmoi.io/get)"
+
+export PATH=$PATH:~/bin
+
 curl -sL https://raw.githubusercontent.com/wimpysworld/deb-get/main/deb-get | sudo -E bash -s install deb-get
-deb-get install bat
 
 curl -sS https://starship.rs/install.sh | sh
 
+~/.zsh/scripts/install_ubuntu.sh
+
+~/.zsh/scripts/install_deb_get.sh
+
+#~/.zsh/scripts/install_pacman.sh
+
 # curl -LO https://github.com/wez/wezterm/releases/download/nightly/wezterm-nightly.Ubuntu22.04.deb && sudo apt install -y ./wezterm-nightly.Ubuntu22.04.deb
-#rm id.tar.gz id_r*
+
 #sudo pacman -S openssh chezmoi --needed --noconfirm
+
 #sudo systemctl --now enable sshd
 
 #chezmoi init --apply git@github.com:tommyctruong/dotfiles.git
