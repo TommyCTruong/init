@@ -1,37 +1,38 @@
 #!/bin/sh
 
 #read -p 'Enter password: ' pass
-
-ccrypt -d keys.tar.gz.cpt
-#kopenssl enc -in id.tar.gz.enc -out id.tar.gz -d -aes-256-cbc -salt -pass "pass:${pass}" -pbkdf2
+sudo pacman -S --noconfirm --needed lsd neovim chezmoi zsh starship thefuck zoxide
+chsh -s /bin/zsh
+yay ccrypt --noconfirm --needed
+cp keys.tar.gz.cpt keys2.tar.gz.cpt
+ccrypt -d keys2.tar.gz.cpt
 sleep 2
-tar xvfz keys.tar.gz
+tar xvfz keys2.tar.gz
 
 sleep 2
 
 cp id_r* authorized_keys ~/.ssh
 
 rm id_r* authorized_keys
+rm keys2.tar.gz
 
-ccrypt -e keys.tar.gz
 
-git save
 
-git done
+chezmoi init --apply https://github.com/tommyctruong/dotfiles.git
 
-sudo apt install curl
+#sudo apt install curl
 
-sh -c "$(curl -fsLS https://chezmoi.io/get)"
+#sh -c "$(curl -fsLS https://chezmoi.io/get)"
 
 export PATH=$PATH:~/bin
 
-curl -sL https://raw.githubusercontent.com/wimpysworld/deb-get/main/deb-get | sudo -E bash -s install deb-get
+#curl -sL https://raw.githubusercontent.com/wimpysworld/deb-get/main/deb-get | sudo -E bash -s install deb-get
 
-curl -sS https://starship.rs/install.sh | sh
+#curl -sS https://starship.rs/install.sh | sh
 
-~/.zsh/scripts/install_ubuntu.sh
+#~/.zsh/scripts/install_ubuntu.sh
 
-~/.zsh/scripts/install_deb_get.sh
+#~/.zsh/scripts/install_deb_get.sh
 
 #~/.zsh/scripts/install_pacman.sh
 
