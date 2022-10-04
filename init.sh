@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #read -p 'Enter password: ' pass
-sudo pacman -S --noconfirm --needed lsd neovim chezmoi zsh starship thefuck zoxide bat
+sudo pacman -S --noconfirm --needed lsd neovim chezmoi zsh starship thefuck zoxide bat xfce4-clipman-plugin
 chsh -s /bin/zsh
 yay ccrypt --noconfirm --needed
 cp keys.tar.gz.cpt keys2.tar.gz.cpt
